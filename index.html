@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>人口分布</title>
+    <link rel="stylesheet" href="http://openlayers.org/en/v3.10.1/css/ol.css" type="text/css">
+    <link rel="stylesheet" href="css/map.css" type="text/css">
+</head>
+<body>
+<div id="map" class="map" tabindex="0" >
+</div>
+<div id="filter" class="filter">
+    <p class="controlSelect"> 
+        栅格: &nbsp;
+        <select id="controlGrid" width="200" > 
+            <option value = 100 selected=unselected>&nbsp;100米&nbsp;</option> 
+            <option value = 200 selected=unselected>&nbsp;200米&nbsp;</option> 
+            <option value = 500 selected=unselected>&nbsp;500米&nbsp;</option> 
+            <option value = 1000 selected=selected>&nbsp;1000米&nbsp;</option>
+        </select>
+        &nbsp;&nbsp;&nbsp;
+        类型: &nbsp;
+        <select id="controlType" width="200" > 
+            <option value = "live" selected=unselected>&nbsp;居住&nbsp;</option> 
+            <option value = "work" selected=selected>&nbsp;工作&nbsp;</option> 
+        </select>
+        &nbsp;&nbsp;&nbsp;
+        <input class="updateButton" type="button" value="&nbsp;确定&nbsp;" onclick="selectVis()" />
+        &nbsp;&nbsp;&nbsp;数据源时间区间2017年6月
+    </p>
+</div>
+<div id="info" class="info">
+    <p class="intro">点击某个基站扇区 查看详情.<br/> 或者
+    <a href="" title="开始点击"> 圈定一个多边形 </a> 查看基站扇区的覆盖范围.<br/><br/>
+    选定范围内的人口数: <span>0</span> </p>
+    <p class="select" id ="single"><img class="hand" src="img/click.svg" width="40px">点击地图画出一个多边形</p><br/>
+    <svg class="legend" width="300" height="25"></svg>
+</div>
+
+<script src="http://api.map.baidu.com/api?v=2.0&ak=GBxFTGWYF0v439Yp40SmjvBL" type="text/javascript" ></script>
+<script src="http://openlayers.org/en/v3.10.1/build/ol.js"></script>
+<script src="lib/d3.min.js"></script>
+<script src="js/map.js"></script>
+</body>
+</html>
