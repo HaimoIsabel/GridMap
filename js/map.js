@@ -40,7 +40,7 @@ var baidu_source = new ol.source.TileImage({
             y = "M"+(-y);
         }
 
-        return "http://online3.map.bdimg.com/onlinelabel/?qt=tile&x="+x+"&y="+y+"&z="+z+"&styles=pl&udt=20171021&scaler=1&p=1";
+        return "https://online3.map.bdimg.com/onlinelabel/?qt=tile&x="+x+"&y="+y+"&z="+z+"&styles=pl&udt=20171021&scaler=1&p=1";
     }
 });
 
