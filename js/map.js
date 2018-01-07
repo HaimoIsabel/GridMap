@@ -40,7 +40,7 @@ var baidu_source = new ol.source.TileImage({
             y = "M"+(-y);
         }
 
-        return "https://online3.map.bdimg.com/onlinelabel/?qt=tile&x="+x+"&y="+y+"&z="+z+"&styles=pl&udt=20171021&scaler=1&p=1";
+        return "http://online3.map.bdimg.com/onlinelabel/?qt=tile&x="+x+"&y="+y+"&z="+z+"&styles=pl&udt=20171021&scaler=1&p=1";
     }
 });
 
@@ -68,23 +68,15 @@ var map = new ol.Map({
 });
 
 
-var live100, live200, live500, live1000, work100, work200, work500, work1000;
+var live500, live1000, work500, work1000;
 d3.queue()
-    .defer(d3.json, 'data/beijing_live_201706_100m.json')
-    .defer(d3.json, 'data/beijing_live_201706_200m.json')
     .defer(d3.json, 'data/beijing_live_201706_500m.json')
     .defer(d3.json, 'data/beijing_live_201706_1000m.json')
-    .defer(d3.json, 'data/beijing_work_201706_100m.json')
-    .defer(d3.json, 'data/beijing_work_201706_200m.json')
     .defer(d3.json, 'data/beijing_work_201706_500m.json')
     .defer(d3.json, 'data/beijing_work_201706_1000m.json')
-    .await(function(error, live_100, live_200, live_500, live_1000, work_100, work_200, work_500, work_1000){
-        live100=live_100;
-        live200=live_200;
+    .await(function(error, live_500, live_1000,work_500, work_1000){
         live500=live_500;
         live1000=live_1000;
-        work100=work_100;
-        work200=work_200;
         work500=work_500;
         work1000=work_1000;
         //***************** init ********************//
@@ -101,7 +93,7 @@ d3.queue()
 var gridLayer, gridSelect;
 
 function updateVis (dataName=null, Len=null, ismove=false){
-
+    console.log(dataName,Len);
     if (dataName === null) {
         visData = preVisData
     } else {
