@@ -174,7 +174,7 @@ function updateVis (dataName=null, Len=null, ismove=false){
             new ol.style.Style({
                 stroke: new ol.style.Stroke({
                     color: '#333',
-                    width: 30 / resolution
+                    width: 150 / resolution
                 }),
                 fill: new ol.style.Fill({
                     color:[rgb.r, rgb.g, rgb.b, 0.6]
