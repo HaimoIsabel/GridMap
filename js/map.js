@@ -174,13 +174,13 @@ function updateVis (dataName=null, Len=null, ismove=false){
             new ol.style.Style({
                 stroke: new ol.style.Stroke({
                     color: '#333',
-                    width: 10 / resolution
+                    width: 30 / resolution
                 }),
                 fill: new ol.style.Fill({
                     color:[rgb.r, rgb.g, rgb.b, 0.6]
                 }),
                 geometry: new ol.geom.Polygon([[
-                    [x,y], [x, y + gridLen], [x + gridLen, y + gridLen], [x + gridLen, y]
+                    [x,y], [x, y + gridLen*1.3], [x + gridLen*1.327, y + gridLen*1.3], [x + gridLen*1.327, y]
                 ]])
             })
         ];
