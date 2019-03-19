@@ -145,10 +145,13 @@ function updateVis (dataName=null, Len=null, ismove=false){
             y = coordinate[1],
             pop = parseInt(feature.getProperties().count),
             rgb = d3.rgb(colorScale(pop));
-        // console.log(x,y,y + gridLen)
 
         return [
             new ol.style.Style({
+                stroke: new ol.style.Stroke({
+                    color: '#FFEDA0',
+                    width: 0.011
+                }),
                 fill: new ol.style.Fill({
                     color:[rgb.r, rgb.g, rgb.b, 0.6]
                 }),
